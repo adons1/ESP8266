@@ -58,10 +58,10 @@ void loop()
     String httpRequestData ="telemetry="+String(iSecret);
     int httpCode = http.POST(httpRequestData);
     String payload;
-      
+    Serial.println(httpCode);
     if (httpCode > 0) {
 
-        Serial.printf("[HTTP] GET... code: %d\n", httpCode);
+        Serial.printf("[HTTP] POST... code: %d\n", httpCode);
           
         payload = http.getString();
         Serial.println(payload);
